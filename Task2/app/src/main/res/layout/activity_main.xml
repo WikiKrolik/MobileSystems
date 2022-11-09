@@ -8,12 +8,99 @@
 
     <TextView
         android:id="@+id/accelerometer_data"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:layout_width="232dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_height="100dp"/>
+
+    <ImageView
+        android:id="@+id/dice1"
+        android:layout_width="81dp"
+        android:layout_height="81dp"
+        android:textSize="50dp"
+        app:layout_constraintBottom_toTopOf="@+id/accelerometer_data"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.177"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.58" />
+
+    <ImageView
+        android:id="@+id/dice2"
+        android:layout_width="81dp"
+        android:layout_height="81dp"
+        android:textSize="50dp"
+        app:layout_constraintBottom_toTopOf="@+id/accelerometer_data"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.197"
+        app:layout_constraintStart_toEndOf="@+id/dice1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.578" />
+
+    <ImageView
+        android:id="@+id/dice3"
+        android:layout_width="81dp"
+        android:layout_height="81dp"
+        android:textSize="50dp"
+        app:layout_constraintBottom_toTopOf="@+id/accelerometer_data"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.543"
+        app:layout_constraintStart_toEndOf="@+id/dice2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.581" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="105dp"
+        android:layout_height="38dp"
+        android:text="Dice number:"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.294"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.116" />
+
+    <Spinner
+        android:id="@+id/spinner2"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.319"
+        app:layout_constraintStart_toEndOf="@+id/textView2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.099"
+        tools:ignore=",TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/dice1text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="@+id/dice1"
+        app:layout_constraintStart_toStartOf="@+id/dice1"
+        app:layout_constraintTop_toBottomOf="@+id/dice1" />
+
+    <TextView
+        android:id="@+id/dice2text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="@+id/dice2"
+        app:layout_constraintStart_toStartOf="@+id/dice2"
+        app:layout_constraintTop_toBottomOf="@+id/dice2" />
+
+    <TextView
+        android:id="@+id/dice3text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        app:layout_constraintEnd_toEndOf="@+id/dice3"
+        app:layout_constraintStart_toStartOf="@+id/dice3"
+        app:layout_constraintTop_toBottomOf="@+id/dice3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
