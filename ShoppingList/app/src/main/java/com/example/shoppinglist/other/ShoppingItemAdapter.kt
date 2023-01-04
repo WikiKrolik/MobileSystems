@@ -31,7 +31,7 @@ class ShoppingItemAdapter(
 
         holder.binding.tvAmount.text = "${curShoppingItem.amount}"
 
-        holder.binding.checkBox2.isChecked = curShoppingItem.isBought
+        holder.binding.checkBox.isChecked = curShoppingItem.isBought
 
         holder.binding.ivDelete.setOnClickListener{
             viewModel.delete(curShoppingItem)
@@ -49,7 +49,7 @@ class ShoppingItemAdapter(
             }
         }
 
-            holder.binding.checkBox2.setOnClickListener {
+            holder.binding.checkBox.setOnClickListener {
                 curShoppingItem.isBought = !curShoppingItem.isBought
                 viewModel.upsert(curShoppingItem)
                 }
