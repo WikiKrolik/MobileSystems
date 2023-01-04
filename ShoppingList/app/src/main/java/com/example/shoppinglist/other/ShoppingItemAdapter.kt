@@ -1,14 +1,17 @@
 package com.example.shoppinglist.other
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.shoppinglist.Data.db.entities.ShoppingItem
 import com.example.shoppinglist.R
 import com.example.shoppinglist.databinding.ShoppingItemBinding
 import com.example.shoppinglist.ui.shoppinglist.ShoppingViewModel
 import com.example.shoppinglist.ui.shoppinglist.ShoppingViewModelFactory
+import java.security.AccessController.getContext
 
 
 class ShoppingItemAdapter(
@@ -28,6 +31,8 @@ class ShoppingItemAdapter(
 
         holder.binding.tvAmount.text = "${curShoppingItem.amount}"
 
+        holder.binding.checkBox2.isChecked = curShoppingItem.isBought
+
         holder.binding.ivDelete.setOnClickListener{
             viewModel.delete(curShoppingItem)
         }
@@ -43,7 +48,13 @@ class ShoppingItemAdapter(
                 viewModel.upsert(curShoppingItem)
             }
         }
-    }
+
+            holder.binding.checkBox2.setOnClickListener {
+                curShoppingItem.isBought = !curShoppingItem.isBought
+                viewModel.upsert(curShoppingItem)
+                }
+        }
+
 
     override fun getItemCount(): Int {
         return items.size

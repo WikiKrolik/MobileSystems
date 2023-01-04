@@ -25,7 +25,7 @@ class AddShoppingItemDialog(context: Context, var addDialogListener: AddDialogLi
                 return@setOnClickListener
             }
 
-            val item = ShoppingItem(name, amount.toInt())
+            val item = ShoppingItem(name, amount.toInt(), isBought = false)
             addDialogListener.onAddButtonClicked(item)
             dismiss()
         }
