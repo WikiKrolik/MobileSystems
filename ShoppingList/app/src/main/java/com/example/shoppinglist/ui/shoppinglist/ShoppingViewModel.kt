@@ -20,4 +20,7 @@ class ShoppingViewModel(
     }
 
     fun getAllShoppingItems() = repository.getAllShoppingItems()
+
+    fun getItemsInList(listId : Int) = repository.getItemsInList(listId)
+
 }

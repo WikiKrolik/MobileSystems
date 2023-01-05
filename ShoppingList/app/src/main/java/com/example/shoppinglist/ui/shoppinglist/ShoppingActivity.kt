@@ -5,48 +5,48 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.get
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.shoppinglist.Data.db.entities.ShoppingItem
+import com.example.shoppinglist.Data.db.entities.ShoppingList
+import com.example.shoppinglist.Data.repositories.ShoppingListRepository
 import com.example.shoppinglist.Data.repositories.ShoppingRepository
 import com.example.shoppinglist.R
 import com.example.shoppinglist.other.ShoppingItemAdapter
-import kotlinx.android.synthetic.main.activity_shopping.*
-import org.kodein.di.Kodein
+import kotlinx.android.synthetic.main.fragment_lists.*
 import org.kodein.di.KodeinAware
 import org.kodein.di.android.kodein
 import org.kodein.di.generic.instance
 
-class ShoppingActivity : AppCompatActivity(), KodeinAware {
+class ShoppingActivity : AppCompatActivity(){
 
-    override val kodein by kodein()
 
-    private val factory: ShoppingViewModelFactory by instance()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_shopping)
+        setContentView(R.layout.fragment_container)
 
         val database = ShoppingDatabase(this)
-        val repository = ShoppingRepository(database)
-        val factory = ShoppingViewModelFactory(repository)
+        val repository = ShoppingListRepository(database)
+        val factory = ShoppingListViewModelFactory(repository)
 
-        val viewModel = ViewModelProvider(this, factory)[ShoppingViewModel::class.java]
-        val adapter = ShoppingItemAdapter(listOf(), viewModel)
+        val viewModel = ViewModelProvider(this, factory)[ShoppingListViewModel::class.java]
+        val adapter = ShoppingListAdapter(listOf(), viewModel)
 
-        rvShoppingItems.layoutManager = LinearLayoutManager(this)
-        rvShoppingItems.adapter = adapter
 
-        viewModel.getAllShoppingItems().observe(this, Observer{
-            adapter.items = it
-            adapter.notifyDataSetChanged()
-        })
-
-        fab.setOnClickListener{
-            AddShoppingItemDialog(this, object : AddDialogListener{
-                override fun onAddButtonClicked(item: ShoppingItem) {
-                    viewModel.upsert(item)
-                }
-            }).show()
-        }
+//       rv_ShoppingLists.layoutManager = LinearLayoutManager(this)
+//        rv_ShoppingLists.adapter = adapter
+//
+//        viewModel.getAllLists().observe(this, Observer{
+//            adapter.lists = it
+//            adapter.notifyDataSetChanged()
+//        })
+//
+//        fab_addList.setOnClickListener{
+//            AddShoppingListDialog(this, object : AddListDialogListener{
+//                override fun onAddButtonClicked(list: ShoppingList) {
+//                    viewModel.upsert(list)
+//                }
+//            }).show()
+//        }
     }
 }
