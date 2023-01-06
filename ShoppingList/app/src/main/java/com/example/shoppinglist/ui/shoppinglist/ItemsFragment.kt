@@ -44,6 +44,9 @@ class ItemsFragment(listId : Int, listName : String) : Fragment() {
         actionBar?.title = listName
         actionBar?.setDisplayHomeAsUpEnabled(true)
 
+ //       actionBar?.setDisplayHomeAsUpEnabled(false)
+ //       actionBar?.title = "ShoppingList"
+
         val rv = binding.rvShoppingItems
         val fab = binding.fab
 

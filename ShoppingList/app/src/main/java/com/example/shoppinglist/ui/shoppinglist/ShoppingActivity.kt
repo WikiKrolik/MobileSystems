@@ -3,6 +3,7 @@ package com.example.shoppinglist.ui.shoppinglist
 import com.example.shoppinglist.Data.db.ShoppingDatabase
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -20,6 +21,14 @@ import org.kodein.di.generic.instance
 class ShoppingActivity : AppCompatActivity(){
 
 
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            android.R.id.home -> {
+                supportFragmentManager.popBackStack()
+            }
+        }
+        return super.onOptionsItemSelected(item)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,6 +40,7 @@ class ShoppingActivity : AppCompatActivity(){
 
         val viewModel = ViewModelProvider(this, factory)[ShoppingListViewModel::class.java]
         val adapter = ShoppingListAdapter(listOf(), viewModel)
+
 
 
 //       rv_ShoppingLists.layoutManager = LinearLayoutManager(this)
