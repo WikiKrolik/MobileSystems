@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/blue"
-    android:layout_marginTop="20dp"
+    android:background="@drawable/background"
     android:layout_height="match_parent"
     tools:context=".ui.shoppinglist.ListsFragment">
 
@@ -22,13 +21,25 @@
         android:layout_marginEnd="16dp"
         android:clickable="true"
         android:src="@drawable/ic_plus"
-        app:backgroundTint="@color/teal_700"
+        app:backgroundTint="#08589F"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.929"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/rv_ShoppingLists"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.902"
+        app:layout_constraintVertical_bias="0.941"
         tools:ignore="SpeakableTextPresentCheck" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/voiceBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:clickable="true"
+        android:src="@drawable/ic_mic"
+        app:backgroundTint="#08589F"
+        app:layout_constraintBottom_toTopOf="@+id/fab_addList"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

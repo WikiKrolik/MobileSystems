@@ -66,6 +66,8 @@ class ShoppingListAdapter(
 
         holder.itemView.findViewById<TextView>(R.id.tv_ListName).text = curList.name
 
+        holder.itemView.findViewById<TextView>(R.id.tv_date).text = curList.date.toString()
+
         holder.itemView.findViewById<ImageView>(R.id.tv_Delete).setOnClickListener {
             viewModel.delete(curList)
         }

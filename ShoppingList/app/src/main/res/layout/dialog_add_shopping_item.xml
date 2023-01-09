@@ -15,6 +15,7 @@
         android:layout_height="wrap_content"
         android:text="Add a new Shopping Item"
         android:textColor="@color/black"
+        android:fontFamily="@font/alice"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -26,6 +27,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:ems="10"
+        android:fontFamily="@font/alice"
         android:hint="Name"
         android:inputType="text"
         android:minHeight="48dp"
@@ -40,6 +42,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:ems="10"
+        android:fontFamily="@font/alice"
         android:hint="Amount"
         android:inputType="number"
         android:minHeight="48dp"
@@ -49,6 +52,7 @@
 
     <TextView
         android:id="@+id/tvAdd"
+        android:fontFamily="@font/alice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -65,6 +69,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:text="CANCEL"
+        android:fontFamily="@font/alice"
         android:textColor="@color/black"
         android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@+id/tvAdd"

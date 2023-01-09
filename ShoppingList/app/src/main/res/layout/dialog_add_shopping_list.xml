@@ -4,15 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:layout_constraintWidth="300dp"
+    app:layout_constraintWidth="500dp"
     app:layout_constraintHeight="wrap_content"
     android:padding="16dp">
 
     <TextView
         android:id="@+id/tvTitle"
+        android:textColor="@color/black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Add new list"
+        android:text="Add a new List"
+        android:fontFamily="@font/alice"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,6 +27,7 @@
         android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="Name"
+        android:fontFamily="@font/alice"
         android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -33,6 +36,8 @@
 
     <TextView
         android:id="@+id/tvCancel"
+        android:textColor="@color/black"
+        android:fontFamily="@font/alice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -44,6 +49,8 @@
 
     <TextView
         android:id="@+id/tvAdd"
+        android:textColor="@color/black"
+        android:fontFamily="@font/alice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
